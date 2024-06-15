@@ -2,19 +2,19 @@ const DatabaseClient = require("./dbClient");
 const { queries, testData } = require("./queries");
 
 const mysqlConfig = {
-  host: "127.0.0.1", // Replace with the actual hostname or IP
+  host: "127.0.0.1",
   user: "root",
   password: "1234",
   database: "test_db",
 };
 
-// const postgresqlConfig = {
-//   host: "your_actual_hostname_or_ip", // Replace with the actual hostname or IP
-//   user: "username",
-//   password: "password",
-//   database: "test_db",
-//   port: 5432,
-// };
+const postgresqlConfig = {
+  host: "127.0.0.1",
+  user: "postgres",
+  password: "1234",
+  database: "postgres",
+  port: 5432,
+};
 
 const sqliteConfig = {
   database: "./test_db.sqlite",
@@ -22,7 +22,7 @@ const sqliteConfig = {
 
 const clients = {
   mysql: new DatabaseClient("mysql", mysqlConfig),
-  //   postgresql: new DatabaseClient("postgresql", postgresqlConfig),
+  postgresql: new DatabaseClient("postgresql", postgresqlConfig),
   sqlite: new DatabaseClient("sqlite", sqliteConfig),
 };
 
